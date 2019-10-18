@@ -723,7 +723,7 @@ macro(CPM_Finish)
   if (NOT ((DEFINED CPM_NO_UPDATE) AND (CPM_NO_UPDATE)))
     CPM_EnsureRepoIsCurrent(
       TARGET_DIR ${CPM_DIR_OF_CPM}
-      GIT_REPOSITORY "https://github.com/iauns/cpm"
+      GIT_REPOSITORY "https://github.com/Sapphio/cpm"
       GIT_TAG "origin/master"
       USE_CACHING FALSE
       )
@@ -731,8 +731,8 @@ macro(CPM_Finish)
     # Ensure that the cached version of CPM is up-to-date and cloned.
     if ((DEFINED CPM_MODULE_CACHE_DIR) AND (NOT DEFINED CPM_MODULE_CACHE_NO_WRITE))
       CPM_EnsureRepoIsCurrent(
-        TARGET_DIR "${CPM_MODULE_CACHE_DIR}/github_iauns_cpm"
-        GIT_REPOSITORY "https://github.com/iauns/cpm"
+        TARGET_DIR "${CPM_MODULE_CACHE_DIR}/github_sapphio_cpm"
+        GIT_REPOSITORY "https://github.com/Sapphio/cpm"
         GIT_TAG "origin/master"
         USE_CACHING FALSE
         )
