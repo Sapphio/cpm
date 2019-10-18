@@ -709,9 +709,10 @@ endmacro()
 macro(CPM_Finish)
   # Ensure the parent function knows what we decided to name ourselves.
   # This name will correspond to our module's namespace directives.
-  if (NOT CPM_HIERARCHY_LEVEL EQUAL 0)
-    message(FATAL_ERROR "You can only call CPM_Finish from the top level of the dependency hierarchy.")
-  endif()
+  # have to disable this so you can nest modules
+  #if (NOT CPM_HIERARCHY_LEVEL EQUAL 0)
+    #message(FATAL_ERROR "You can only call CPM_Finish from the top level of the dependency hierarchy.")
+  #endif()
 
   # Setup appropriate definitions and include directories.
   add_definitions(${CPM_DEFINITIONS})
