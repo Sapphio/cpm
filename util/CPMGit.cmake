@@ -75,7 +75,7 @@ macro(_cpm_update_git_repo dir tag offline)
     OUTPUT_VARIABLE head_sha
     )
   if(error_code)
-    message(FATAL_ERROR "Failed to get the hash for HEAD")
+    message(FATAL_ERROR "Failed to get the hash for HEAD. ErrCode: ${error_code} dir: ${dir} rev: ${head_sha}")
   endif()
 
   execute_process(
